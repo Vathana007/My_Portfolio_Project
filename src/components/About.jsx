@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import me from "../assets/Image.png";
+import me from "../assets/image.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../varaints";
 
