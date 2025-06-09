@@ -5,6 +5,7 @@ import project3 from "../assets/project3.jpg";
 import project4 from "../assets/project4.jpg";
 import project5 from "../assets/project5.jpg";
 import project6 from "../assets/project6.jpg";
+import { Helmet } from 'react-helmet-async';
 
 const projects = [
   {
@@ -53,43 +54,51 @@ const projects = [
 
 const Project = () => {
   return (
-    <section id="projects" className="bg-black text-white py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-400 mb-10">
-          Projects
-        </h2>
+    <>
+      <Helmet>
+        <title>Project | Vathana</title>
+        <meta name="description" content="Project of Vathana, a passionate web developer and software engineer from Cambodia." />
+      </Helmet>
+      <section id="projects" className="bg-black text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-400 mb-10">
+            Projects
+          </h2>
 
-        <div className="flex overflow-x-auto space-x-6 py-4">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="flex-none w-80 bg-gray-800 hover:bg-teal-500 hover:text-black transition-all duration-300 rounded-lg shadow-lg cursor-pointer"
-            >
-              {/* Ensure the image fits within the container */}
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-              )}
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-teal-400 hover:text-white">{project.title}</h3>
-                <p className="text-white mt-2 text-sm">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:underline mt-4 inline-block"
-                >
-                  View Project
-                </a>
+          <div className="flex overflow-x-auto space-x-6 py-4">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="flex-none w-80 bg-gray-800 hover:bg-teal-500 hover:text-black transition-all duration-300 rounded-lg shadow-lg cursor-pointer"
+              >
+                {/* Ensure the image fits within the container */}
+                {project.image && (
+                  <div className="w-full h-48 overflow-hidden rounded-t-lg flex items-center justify-center bg-gray-900">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-teal-400 hover:text-white">{project.title}</h3>
+                  <p className="text-white mt-2 text-sm">{project.description}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:underline mt-4 inline-block"
+                  >
+                    View Project
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../varaints";
+import { Helmet } from 'react-helmet-async';
 
 const TimelineCard = ({ year, title, description }) => (
     <div className="relative mb-8 group hover:scale-[1.02] transition-transform">
@@ -42,68 +43,52 @@ const Experience = () => {
     const experiences = [
         {
             id: 1,
-            year: "2025 - PRESENT",
+            year: "2025",
+            title: "Phone Shop POS System",
+            description: "Developed a POS system for a phone shop during my internship. Implemented full-stack functionality to manage inventory, process order, and generate invoices. ",
+        },
+        {
+            id: 2,
+            year: "2025",
             title: "Full-Stack Developer",
             description: "Developing full-featured web applications name 'Kore' using React and Tailwind CSS for the frontend, and Node.js with MongoDB for the backend.",
         },
         {
-            id: 2,
+            id: 3,
             year: "2024",
             title: "Capture the Flag Participant",
             description: "Participated in multiple Capture the Flag (CTF) and hackathon events focused on web security and artificial intelligence.",
         },
-        {
-            id: 3,
-            year: "2024",
-            title: "Practice Projects",
-            description: "Built a small-scale websites, handling both frontend and backend development.",
-        },
     ];
 
     return (
-        <div id="experiences" className="bg-dark py-16 px-4 md:px-12">
-            {/* Heading Section */}
-            <motion.div
-                variants={fadeIn("down", 0.4)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
-                className="text-center mb-12 lg:mb-16">
-                <h1 className="text-white font-bold lg:text-4xl sm:text-3xl text-2xl">My Experiences</h1>
-            </motion.div>
-
-            {/* Left Section */}
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <>
+            <Helmet>
+                <title>Experience | Vathana</title>
+                <meta name="description" content="Experience from Vathana, a passionate web developer and software engineer from Cambodia." />
+            </Helmet>
+            <div id="experiences" className="bg-dark py-16 px-4 md:px-12">
+                {/* Heading Section */}
                 <motion.div
-                    variants={fadeIn("right", 0.4)}
+                    variants={fadeIn("down", 0.4)}
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.7 }}
-                >
-                    <h2 className="text-teal-400 text-lg sm:text-xl lg:text-2xl font-bold mb-6">EDUCATION</h2>
-                    <div className="border-l-2 border-teal-400 pl-6 cursor-pointer">
-                        {educations.map((item) => (
-                            <TimelineCard
-                                key={item.id}
-                                year={item.year}
-                                title={item.title}
-                                description={item.description}
-                            />
-                        ))}
-                    </div>
+                    className="text-center mb-12 lg:mb-16">
+                    <h1 className="text-white font-bold lg:text-4xl sm:text-3xl text-2xl">My Experiences</h1>
                 </motion.div>
 
-                {/* Right Section */}
-                <motion.div
-                    variants={fadeIn("left", 0.4)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{ once: true, amount: 0.7 }}
-                >
-                    <div>
-                        <h2 className="text-teal-400 text-lg sm:text-xl lg:text-2xl font-bold mb-6" >EXPERIENCE</h2>
+                {/* Left Section */}
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <motion.div
+                        variants={fadeIn("right", 0.4)}
+                        initial="hidden"
+                        whileInView={"show"}
+                        viewport={{ once: true, amount: 0.7 }}
+                    >
+                        <h2 className="text-teal-400 text-lg sm:text-xl lg:text-2xl font-bold mb-6">EDUCATION</h2>
                         <div className="border-l-2 border-teal-400 pl-6 cursor-pointer">
-                            {experiences.map((item) => (
+                            {educations.map((item) => (
                                 <TimelineCard
                                     key={item.id}
                                     year={item.year}
@@ -112,10 +97,32 @@ const Experience = () => {
                                 />
                             ))}
                         </div>
-                    </div>
-                </motion.div>
+                    </motion.div>
+
+                    {/* Right Section */}
+                    <motion.div
+                        variants={fadeIn("left", 0.4)}
+                        initial="hidden"
+                        whileInView={"show"}
+                        viewport={{ once: true, amount: 0.7 }}
+                    >
+                        <div>
+                            <h2 className="text-teal-400 text-lg sm:text-xl lg:text-2xl font-bold mb-6" >EXPERIENCE</h2>
+                            <div className="border-l-2 border-teal-400 pl-6 cursor-pointer">
+                                {experiences.map((item) => (
+                                    <TimelineCard
+                                        key={item.id}
+                                        year={item.year}
+                                        title={item.title}
+                                        description={item.description}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
