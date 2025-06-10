@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://vathana007.github.io/My_Portfolio_Project/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vathana007.github.io/My_Portfolio_Project/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vathana007.github.io/My_Portfolio_Project/#experience</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vathana007.github.io/My_Portfolio_Project/#skills</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vathana007.github.io/My_Portfolio_Project/#projects</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
