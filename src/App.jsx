@@ -13,7 +13,8 @@ function App() {
 
   return (
     <>
-      <div  className='bg-black'>
+      <div className='bg-slate-950 text-slate-200 min-h-screen selection:bg-teal-500 selection:text-white'>
+        <div className="fixed inset-0 -z-10 h-full w-full bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(20,184,166,0.3),rgba(255,255,255,0))]"></div>
         <Navbar />
         <Home />
         <About />
