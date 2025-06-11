@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-6 mt-12">
+    <footer className="bg-black text-white py-4 mt-8">
       <div className="container mx-auto text-center">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Vathana. All Rights Reserved.
@@ -24,6 +24,15 @@ const Footer = () => {
             className="text-teal-400 hover:text-teal-500 transition duration-200"
           >
             LinkedIn
+          </a>
+          <span className="mx-2">|</span>
+          <a
+            href="https://t.me/Chort_Sereivathana/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-400 hover:text-teal-500 transition duration-200"
+          >
+            Telegram
           </a>
         </div>
       </div>

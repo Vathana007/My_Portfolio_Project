@@ -53,7 +53,7 @@ const Skill = () => {
                 <title>Skill | Vathana</title>
                 <meta name="description" content="Skill about Vathana, a passionate web developer and software engineer from Cambodia." />
             </Helmet>
-            <section id="skills" className="bg-black text-white py-16 px-6">
+            <section id="skills" className="bg-gray-900 text-white py-16 px-6">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h2
                         variants={fadeIn("down", 0.4)}

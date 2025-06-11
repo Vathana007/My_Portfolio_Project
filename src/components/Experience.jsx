@@ -44,7 +44,7 @@ const Experience = () => {
         {
             id: 1,
             year: "2025",
-            title: "Phone Shop POS System",
+            title: "E-Khmer internship",
             description: "Developed a POS system for a phone shop during my internship. Implemented full-stack functionality to manage inventory, process order, and generate invoices. ",
         },
         {

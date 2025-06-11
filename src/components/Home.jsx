@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import { fadeIn } from "../varaints";
-import image from "../assets/home-me.jpg"; // Your image path
-import CV from "../assets/Chort_Sereivathana-CV.pdf"; // Your CV link
+import image from "../assets/home-me.jpg"; 
+import CV from "../assets/Chort_Sereivathana-CV.pdf"; 
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {

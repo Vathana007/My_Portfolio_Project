@@ -6,6 +6,8 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Project from './components/Project'
 import Skill from './components/Skill'
+import Achievement from './components/Achievement'
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
         <Experience />
         <Skill />
         <Project />
+        <Achievement />
         <Footer />
       </div>
     </>

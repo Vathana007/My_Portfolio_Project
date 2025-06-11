@@ -23,7 +23,7 @@ const About = () => {
                 <title>About | Vathana</title>
                 <meta name="description" content="Learn more about Vathana, a passionate web developer and software engineer from Cambodia." />
             </Helmet>
-            <section id="about" className="py-12">
+            <section id="about" className="py-12 bg-gray-900">
                 <div className="container mx-auto min-h-[570px] flex flex-col md:flex-row items-center justify-between gap-12">
                     {/* Small size */}
                     <div className="lg:hidden md:w-1/2 text-center md:text-left">

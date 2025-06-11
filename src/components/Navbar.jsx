@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
+import logo from "../assets/Logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ const Navbar = () => {
     { id: 2, title: "Experiences", path: "#experiences" },
     { id: 3, title: "Skills", path: "#skills" },
     { id: 4, title: "Projects", path: "#projects" },
+    { id: 5, title: "Achievements", path: "#achievements" },
   ];
 
   return (
@@ -18,9 +20,11 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="cursor-pointer ml-8 lg:ml-20">
           <a href="/">
-            <h1 className="font-bold text-white text-2xl lg:text-4xl">
-              Port<span className="text-teal-400">folio</span>
-            </h1>
+            <img
+              src={logo}
+              alt="Vathana Logo"
+              className="h-10 w-48 lg:h-14"
+            />
           </a>
         </div>
 
@@ -33,7 +37,9 @@ const Navbar = () => {
                   href={menu.path}
                   className="inline-block text-white py-2 px-3 transition duration-200 hover:text-teal-400 relative group"
                 >
-                  <span className="relative text-lg duration-200 transition group-hover:border-b-2 group-hover:border-teal-400 inline-block">
+                  <span className="relative text-lg inline-block
+                    after:content-[''] after:block after:absolute after:bottom-0 after:right-0 after:w-full after:h-0.5 after:bg-teal-400
+                    after:origin-left after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300">
                     {menu.title}
                   </span>
                 </a>
@@ -57,9 +63,8 @@ const Navbar = () => {
 
       {/* Mobile Menu (toggle visibility based on isMenuOpen state) */}
       <div
-        className={`lg:hidden fixed top-0 right-0 w-2/4 h-full bg-black bg-opacity-90 -z-50 transform transition-transform duration-200 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`lg:hidden fixed top-0 right-0 w-2/4 h-full bg-black bg-opacity-90 -z-50 transform transition-transform duration-200 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex flex-col items-center justify-center space-y-6 pt-24">
           {navbarMenu.map((menu) => (
