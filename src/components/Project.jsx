@@ -10,12 +10,12 @@ import { fadeIn } from "../utils/variants";
 import { Helmet } from "react-helmet-async";
 
 const projects = [
-   {
+  {
     id: 1,
     title: "Phone Shop POS system",
     description: "Developed a POS system for a phone shop. Implemented full-stack functionality to manage inventory, process order, and generate invoices..",
     image: project7,
-    link: "https://github.com/Vathana007/Coffee_Shop_App",
+    link: "",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const projects = [
     title: "Portfolio",
     description: "A portfolio website to showcase my work and skills.",
     image: project4,
-    link: "https://github.com/Vathana007/Portfolio",
+    link: "https://my-portfolio-project-delta-seven.vercel.app/",
   },
   {
     id: 4,
