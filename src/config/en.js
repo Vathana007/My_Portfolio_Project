@@ -92,7 +92,8 @@ const resources = {
           {
             year: "2021 - 2024",
             title: "Australian Education Centre",
-            description: "Completed Academic and professional English proficiency.",
+            description:
+              "Completed Academic and professional English proficiency.",
           },
           {
             year: "2020 - 2022",
@@ -159,6 +160,17 @@ const resources = {
           databases: "Databases",
           mobile: "Mobile",
           languages: "Languages",
+        },
+        technologies: "Technologies",
+        yearsCoding: "Years Coding",
+        projectsBuilt: "Projects Built",
+        certificates: "Certificates",
+        categories: {
+          all: "All",
+          frontend: "Frontend",
+          backend: "Backend",
+          databases: "Databases",
+          mobile: "Mobile",
         },
       },
       projects: {

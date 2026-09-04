@@ -49,7 +49,7 @@ const About = () => {
     <>
       <section
         id="about"
-        className={`py-24 relative z-10 w-full overflow-hidden transition-colors duration-300 ${
+        className={`min-h-screen relative z-10 w-full overflow-hidden transition-colors duration-300 flex items-center ${
           isDark ? "bg-slate-950" : "bg-gradient-to-br from-slate-50 to-white"
         }`}
       >
@@ -408,8 +408,7 @@ const About = () => {
                         ? "border-white/10 bg-gradient-to-r from-slate-900/95 to-slate-900/85"
                         : "border-slate-200/30 bg-gradient-to-r from-white/95 to-slate-50/95"
                     }`}
-                  >
-                  </motion.div>
+                  ></motion.div>
                 </motion.div>
               </motion.div>
             </>

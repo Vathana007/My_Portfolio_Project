@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import project1 from "../assets/project1.jpg";
-import project2 from "../assets/project2.jpg";
-import project4 from "../assets/project4.jpg";
+import project2 from "../assets/project2.png";
+import project4 from "../assets/project4.png";
 import project6 from "../assets/project6.jpg";
 import project7 from "../assets/project7.png";
+import project8 from "../assets/project8.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/variants";
 import { useTheme } from "../context/ThemeContext";
@@ -15,7 +16,7 @@ const projectsData = [
     id: 1,
     titleKey: "projects.items.employeetask.title",
     descriptionKey: "projects.items.employeetask.description",
-    image: project1,
+    image: project8,
     link: "https://github.com/Vathana007/employee-task",
   },
   {
@@ -61,7 +62,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.5 }}
-    className="min-w-[220px] sm:min-w-[250px] max-w-[300px] snap-center flex-shrink-0 group h-full cursor-pointer"
+    className="min-w-[260px] sm:min-w-[280px] md:min-w-[300px] max-w-[340px] snap-center flex-shrink-0 group h-full cursor-pointer"
   >
     <div
       className={`rounded-[20px] h-full overflow-hidden transition-all duration-300 flex flex-col border ${
@@ -71,7 +72,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
       }`}
     >
       {project.image && (
-        <div className="w-full h-[160px] overflow-hidden relative border-b border-white/10">
+        <div className="w-full h-[180px] overflow-hidden relative border-b border-white/10 flex-shrink-0">
           <div
             className={`absolute inset-0 z-10 transition-opacity duration-300 group-hover:opacity-10 ${
               isDark
@@ -89,7 +90,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
 
       <div className="p-4 sm:p-5 flex flex-col flex-grow">
         <h3
-          className={`text-lg sm:text-xl font-bold mb-2 transition-colors duration-300 ${
+          className={`text-base sm:text-lg font-bold mb-2 transition-colors duration-300 line-clamp-2 min-h-[3.5rem] ${
             isDark
               ? "text-slate-100 group-hover:text-teal-300"
               : "text-slate-900 group-hover:text-teal-600"
@@ -99,7 +100,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
         </h3>
 
         <p
-          className={`text-sm leading-relaxed mb-4 flex-grow ${
+          className={`text-sm leading-relaxed mb-4 flex-grow line-clamp-3 ${
             isDark ? "text-slate-300" : "text-slate-700"
           }`}
         >
@@ -110,7 +111,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex cursor-pointer items-center justify-center gap-2 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 mt-auto ${
+          className={`inline-flex cursor-pointer items-center justify-center gap-2 font-semibold py-2.5 px-4 rounded-lg transition-all duration-300 mt-auto w-full ${
             project.link
               ? isDark
                 ? "bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border border-teal-500/30 text-teal-300 hover:from-teal-500 hover:to-cyan-500 hover:text-slate-950 hover:shadow-[0_0_14px_rgba(20,184,166,0.28)]"
@@ -128,7 +129,7 @@ const ProjectCard = ({ project, isDark, t, index }) => (
           {t("projects.viewProject")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-4 w-4 flex-shrink-0"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -163,141 +164,152 @@ const Project = () => {
   };
 
   return (
-    <>
-      <section
-        id="projects"
-        className={`py-20 px-4 md:px-8 relative z-10 w-full transition-colors duration-300 ${
-          isDark
-            ? "bg-slate-950"
-            : "bg-gradient-to-br from-slate-50 via-slate-50 to-cyan-50"
+    <section
+      id="projects"
+      className={`min-h-screen px-4 md:px-8 relative z-10 w-full transition-colors duration-300 flex items-center ${
+        isDark
+          ? "bg-slate-950"
+          : "bg-gradient-to-br from-slate-50 via-slate-50 to-cyan-50"
+      }`}
+    >
+      {/* Decorative background */}
+      <div
+        className={`absolute inset-0 overflow-hidden pointer-events-none ${
+          isDark ? "opacity-15" : "opacity-3"
         }`}
       >
-        {/* Decorative background */}
         <div
-          className={`absolute inset-0 overflow-hidden pointer-events-none ${
-            isDark ? "opacity-15" : "opacity-3"
-          }`}
+          className={`absolute top-0 right-0 w-96 h-96 rounded-full ${
+            isDark ? "bg-teal-500" : "bg-teal-400"
+          } blur-3xl`}
+        ></div>
+        <div
+          className={`absolute bottom-0 left-1/2 w-80 h-80 rounded-full ${
+            isDark ? "bg-cyan-500" : "bg-cyan-300"
+          } blur-3xl`}
+        ></div>
+      </div>
+
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, ${isDark ? "#fff" : "#000"} 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
+        {/* Header */}
+        <motion.div
+          variants={fadeIn("down", 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.7 }}
+          className="text-center mb-16"
         >
-          <div
-            className={`absolute top-0 right-0 w-96 h-96 rounded-full ${
-              isDark ? "bg-teal-500" : "bg-teal-400"
-            } blur-3xl`}
-          ></div>
-          <div
-            className={`absolute bottom-0 left-1/2 w-80 h-80 rounded-full ${
-              isDark ? "bg-cyan-500" : "bg-cyan-300"
-            } blur-3xl`}
-          ></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto">
-          {/* Header */}
-          <motion.div
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.7 }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block mb-4">
-              <span
-                className={`text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full ${
-                  isDark
-                    ? "text-teal-300 bg-teal-500/15 border border-teal-500/30"
-                    : "text-teal-700 bg-teal-100 border border-teal-200"
-                }`}
-              >
-                {t("projects.badge")}
-              </span>
-            </div>
-            <h2
-              className={`text-4xl md:text-5xl font-bold mb-6 ${
-                isDark ? "text-slate-50" : "text-slate-900"
-              }`}
-            >
-              {t("projects.title")}
-            </h2>
-            <p
-              className={`text-lg max-w-2xl mx-auto ${
-                isDark ? "text-slate-400" : "text-slate-600"
-              }`}
-            >
-              {t("projects.subtitle")}
-            </p>
-          </motion.div>
-
-          {/* Carousel Wrapper */}
-          <div className="relative group/carousel">
-            {/* Scroll Buttons */}
-            <button
-              onClick={() => scroll("left")}
-              className={`absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 pointer-events-none group-hover/carousel:pointer-events-auto hidden sm:flex items-center justify-center cursor-pointer ${
+          <div className="inline-block mb-4">
+            <span
+              className={`text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full ${
                 isDark
-                  ? "bg-slate-900/80 border border-white/10 hover:border-teal-500/50 hover:bg-teal-500 text-teal-500 hover:text-slate-950"
-                  : "bg-white/80 border border-slate-200 hover:border-teal-600/50 hover:bg-teal-600 text-teal-600 hover:text-white"
+                  ? "text-teal-300 bg-teal-500/15 border border-teal-500/30"
+                  : "text-teal-700 bg-teal-100 border border-teal-200"
               }`}
             >
-              <FaChevronLeft className="text-lg" />
-            </button>
-
-            <button
-              onClick={() => scroll("right")}
-              className={`absolute right-2 sm:-right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 pointer-events-none group-hover/carousel:pointer-events-auto hidden sm:flex items-center justify-center cursor-pointer ${
-                isDark
-                  ? "bg-slate-900/80 border border-white/10 hover:border-teal-500/50 hover:bg-teal-500 text-teal-500 hover:text-slate-950"
-                  : "bg-white/80 border border-slate-200 hover:border-teal-600/50 hover:bg-teal-600 text-teal-600 hover:text-white"
-              }`}
-            >
-              <FaChevronRight className="text-lg" />
-            </button>
-
-            <div
-              className={`absolute top-0 left-0 w-8 sm:w-16 h-full bg-gradient-to-r ${
-                isDark ? "from-slate-950" : "from-slate-50"
-              } to-transparent z-20 pointer-events-none rounded-l-2xl`}
-            ></div>
-            <div
-              className={`absolute top-0 right-0 w-8 sm:w-16 h-full bg-gradient-to-l ${
-                isDark ? "from-slate-950" : "from-slate-50"
-              } to-transparent z-20 pointer-events-none rounded-r-2xl`}
-            ></div>
-
-            <motion.div
-              ref={scrollRef}
-              variants={fadeIn("up", 0.3)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.7 }}
-              className="flex overflow-x-auto gap-4 sm:gap-5 pb-8 pt-4 px-3 md:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-stretch"
-            >
-              {projectsData.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  isDark={isDark}
-                  t={t}
-                  index={index}
-                />
-              ))}
-            </motion.div>
+              {t("projects.badge")}
+            </span>
           </div>
-
-          {/* Mobile info */}
-          <motion.p
-            variants={fadeIn("up", 0.5)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.7 }}
-            className={`text-center text-xs sm:hidden mt-4 ${
+          <h2
+            className={`text-4xl md:text-5xl font-bold mb-6 ${
+              isDark ? "text-slate-50" : "text-slate-900"
+            }`}
+          >
+            {t("projects.title")}
+          </h2>
+          <p
+            className={`text-lg max-w-2xl mx-auto ${
               isDark ? "text-slate-400" : "text-slate-600"
             }`}
           >
-            {t("projects.swipeHint")} →
-          </motion.p>
+            {t("projects.subtitle")}
+          </p>
+        </motion.div>
+
+        {/* Carousel Wrapper */}
+        <div className="relative group/carousel">
+          {/* Scroll Buttons */}
+          <button
+            onClick={() => scroll("left")}
+            className={`absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 pointer-events-none group-hover/carousel:pointer-events-auto hidden sm:flex items-center justify-center cursor-pointer ${
+              isDark
+                ? "bg-slate-900/80 border border-white/10 hover:border-teal-500/50 hover:bg-teal-500 text-teal-500 hover:text-slate-950"
+                : "bg-white/80 border border-slate-200 hover:border-teal-600/50 hover:bg-teal-600 text-teal-600 hover:text-white"
+            }`}
+          >
+            <FaChevronLeft className="text-lg" />
+          </button>
+
+          <button
+            onClick={() => scroll("right")}
+            className={`absolute right-2 sm:-right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 pointer-events-none group-hover/carousel:pointer-events-auto hidden sm:flex items-center justify-center cursor-pointer ${
+              isDark
+                ? "bg-slate-900/80 border border-white/10 hover:border-teal-500/50 hover:bg-teal-500 text-teal-500 hover:text-slate-950"
+                : "bg-white/80 border border-slate-200 hover:border-teal-600/50 hover:bg-teal-600 text-teal-600 hover:text-white"
+            }`}
+          >
+            <FaChevronRight className="text-lg" />
+          </button>
+
+          {/* Gradient Fade Masks */}
+          <div
+            className={`absolute top-0 left-0 w-12 sm:w-24 h-full bg-gradient-to-r ${
+              isDark ? "from-slate-950" : "from-slate-50"
+            } to-transparent z-20 pointer-events-none rounded-l-2xl`}
+          ></div>
+          <div
+            className={`absolute top-0 right-0 w-12 sm:w-24 h-full bg-gradient-to-l ${
+              isDark ? "from-slate-950" : "from-slate-50"
+            } to-transparent z-20 pointer-events-none rounded-r-2xl`}
+          ></div>
+
+          {/* Scrollable Container */}
+          <motion.div
+            ref={scrollRef}
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.7 }}
+            className="flex overflow-x-auto gap-5 sm:gap-6 pb-8 pt-4 px-3 md:px-6 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-stretch"
+          >
+            {projectsData.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                isDark={isDark}
+                t={t}
+                index={index}
+              />
+            ))}
+          </motion.div>
         </div>
-      </section>
-    </>
+
+        {/* Mobile info */}
+        <motion.p
+          variants={fadeIn("up", 0.5)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.7 }}
+          className={`text-center text-xs sm:hidden mt-4 ${
+            isDark ? "text-slate-400" : "text-slate-600"
+          }`}
+        >
+          {t("projects.swipeHint")} →
+        </motion.p>
+      </div>
+    </section>
   );
 };
 

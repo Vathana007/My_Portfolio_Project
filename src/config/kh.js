@@ -118,7 +118,8 @@ const resources = {
           {
             year: "2024",
             title: "អ្នកចូលរួម CTF & Hackathon",
-            description: "បានចូលរួមប្រកួតប្រជែងក្នុងព្រឹត្តិការណ៍នានាដែលផ្តោតលើសុវត្ថិភាពគេហទំព័រ និងបញ្ញាសិប្បនិម្មិត (AI)។",
+            description:
+              "បានចូលរួមប្រកួតប្រជែងក្នុងព្រឹត្តិការណ៍នានាដែលផ្តោតលើសុវត្ថិភាពគេហទំព័រ និងបញ្ញាសិប្បនិម្មិត (AI)។",
           },
         ],
       },
@@ -153,6 +154,17 @@ const resources = {
           databases: "មូលដ្ឋានទិន្នន័យ",
           mobile: "ឧបករណ៍ចល័ត",
           languages: "ភាសាកម្មវិធី",
+        },
+        technologies: "បច្ចេកវិទ្យា",
+        yearsCoding: "ឆ្នាំសរសេរកូដ",
+        projectsBuilt: "គម្រោងបានបង្កើត",
+        certificates: "វិញ្ញាបនបត្រ",
+        categories: {
+          all: "ទាំងអស់",
+          frontend: "Frontend",
+          backend: "Backend",
+          databases: "មូលដ្ឋានទិន្នន័យ",
+          mobile: "ឧបករណ៍ចល័ត",
         },
       },
       projects: {
